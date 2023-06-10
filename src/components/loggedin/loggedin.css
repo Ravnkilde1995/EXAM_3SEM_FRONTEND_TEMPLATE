@@ -5,39 +5,38 @@ th, td {
     padding:15px;
 }
 
-.login-container {
-    text-align: center;
+.loggedin-container {
     display: flex;
     flex-wrap: wrap;
     float: right;
 }
 
-.login-container input[type=text]{
-    text-align: center;
+.loggedin-container label{
     padding: 6px 6px;
     margin-top: 8px;
     margin-right: 10px;
     font-size: 18px;
     border: black auto 1px;
-    width: 220px; /* adjust as needed (as long as it doesn't break the topnav) */
+    width: 120px; /* adjust as needed (as long as it doesn't break the topnav) */
 }
 
 
-/* Style the button inside the input container */
-.login-container button {
+/* Style the button inside the container */
+.loggedin-container button {
     padding: 8px 8px;
+
     background: #ddd;
     font-size: 18px;
     border: none;
-    /* display: flex; */
+    display: flex; 
 }
 
-.login-container:active{
+.loggedin-container:active{
     overflow: hidden;
     color: white;
 }
 
-.login-container button:hover {
+.loggedin-container button:hover {
     background: #003d76;
     color: white;
 }

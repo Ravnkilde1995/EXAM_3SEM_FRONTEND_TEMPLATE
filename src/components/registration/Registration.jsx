@@ -13,7 +13,6 @@ const Registration = () => {
     const { id, value } = e.target;
     if (id === "username") {
       setUsername(value);
-      // localStorage.setItem("username", value);
     }
     if (id === "password") {
       setPassword(value);
@@ -27,7 +26,7 @@ const Registration = () => {
   const handleSubmit = () => {
     // localStorage.setItem("username", username);
     // fetch til
-    //const url = "https://chriswihudat.dk/tomcat/dat3_semesterProjek/api/user";
+    //const url = "https://ravn-kilde.com/tomcat/dat3_semesterProjek/api/user";
     const url = "http://localhost:8080/api/user"
     const options = {
       method: "POST",

@@ -1,9 +1,7 @@
 
 const URL = "http://localhost:8080";
-const URLBookshelf = "http://localhost:8080/api/bookshelf/";
+// const URLBookshelf = "http://localhost:8080/api/bookshelf/";
 
-// Denne streng burde nok gemmes væk
-const GoogleURL = "https://www.googleapis.com/books/v1/volumes?q=:keyes&key=AIzaSyCZoXruFbr28UKR2Z6HXgtXqnpRA0shUTk"
 
 function handleHttpErrors(res) {
     if (!res.ok) {
@@ -35,11 +33,6 @@ function apiFacade() {
         return fetch(URLBookshelf + user_name, options).then(handleHttpErrors);
     }
 
-    const fetchDataGoogle = () => {
-        const options = makeOptions("GET");
-       return fetch(GoogleURL, options).then(handleHttpErrors);
-      }
-
     const makeOptions = (method, addToken, body) => {
         var opts = {
             method: method,
@@ -57,14 +50,6 @@ function apiFacade() {
         return opts;
     }
 
-    // const addReview = (review) => {
-    //     const options = makeOptions("POST", true, review);
-    //     return fetch(URL + "/api/review", options)
-    //         .then(handleHttpErrors)
-    //         .then(res => {
-    //             console.log(res);
-    //         })
-    // }
     const setToken = (token) => {
         localStorage.setItem('jwtToken', token)
     }
@@ -93,15 +78,16 @@ function apiFacade() {
         return JSON.parse(jsonPayload);
     }
 
-    function review(bookshelfId, bookId, reviewScore, reviewText)
-    {
-        const options = makeOptions("POST", true, {bookshelfId, reviewScore, reviewText});
-        return fetch(URL + "/api/review", options)
-            .then(handleHttpErrors)
-            .then(res => {
-                console.log(res);
-            })
-    }
+    // eksempel
+    // function review(bookshelfId, bookId, reviewScore, reviewText)
+    // {
+    //     const options = makeOptions("POST", true, {bookshelfId, reviewScore, reviewText});
+    //     return fetch(URL + "/api/review", options)
+    //         .then(handleHttpErrors)
+    //         .then(res => {
+    //             console.log(res);
+    //         })
+    // }
 
     return {
         makeOptions,
@@ -111,13 +97,12 @@ function apiFacade() {
         login,
         logout,
         fetchData,
-        fetchDataGoogle,
         readJwtToken,
-        fetchBookshelfData,
 
-        review(bookshelfId, bookId, reviewScore, reviewText) {
+        // review(bookshelfId, bookId, reviewScore, reviewText) {
 
-        }
+        
+    
     }
 }
 
