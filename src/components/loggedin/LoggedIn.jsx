@@ -4,7 +4,7 @@ import "./loggedin.css";
 function LoggedIn({user}){
   
     return (
-      <div class ="loggedin-container">
+      <div>
         <label>Hello, {facade.readJwtToken(facade.getToken()).username}</label>
       </div>
     )

@@ -1,5 +1,6 @@
 
 const URL = "http://localhost:8080";
+const URLUser = "http://localhost:8080/api/user";
 // const URLBookshelf = "http://localhost:8080/api/bookshelf/";
 
 
@@ -27,10 +28,10 @@ function apiFacade() {
         const options = makeOptions("GET", true); //True add's the token
         return fetch(URL + ressource, options).then(handleHttpErrors);
     }
-    const fetchBookshelfData = (user_name) => {
+    const fetchUser = (user_name) => {
         const options = makeOptions("GET"); //True add's the token
-        console.log("URL: " + URLBookshelf + user_name);
-        return fetch(URLBookshelf + user_name, options).then(handleHttpErrors);
+        console.log("URL: " + URLUser + user_name);
+        return fetch(URLUser + user_name, options).then(handleHttpErrors);
     }
 
     const makeOptions = (method, addToken, body) => {
@@ -98,6 +99,7 @@ function apiFacade() {
         logout,
         fetchData,
         readJwtToken,
+        fetchUser
 
         // review(bookshelfId, bookId, reviewScore, reviewText) {
 

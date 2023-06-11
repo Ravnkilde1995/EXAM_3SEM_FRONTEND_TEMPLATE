@@ -12,7 +12,7 @@ th, td {
 }
 
 .loggedin-container label{
-    padding: 6px 6px;
+    padding: 5px 5px;
     margin-top: 8px;
     margin-right: 10px;
     font-size: 18px;
@@ -23,7 +23,7 @@ th, td {
 
 /* Style the button inside the container */
 .loggedin-container button {
-    padding: 8px 8px;
+    padding: 5px 5px;
 
     background: #ddd;
     font-size: 18px;
